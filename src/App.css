@@ -1,0 +1,14 @@
+
+body{
+}
+.div1{
+  background-color: bisque;
+  display: flex;
+  justify-content: space-evenly;
+
+  /* text-align: center; */
+}
+.btn1{
+  font-size: larger;
+  margin: 10px;
+}
