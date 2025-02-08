@@ -1,53 +1,41 @@
-
-import { useState } from 'react';
-import './App.css';
-import Code from "./data1"
-// import React from "react"
-
-function App() {
-  // ************************* Lec1 ******************************
-  // return (
-  //   React.createElement("h2",null,"aml")
-
-  //   <div className='div1'>
-  //     <h2>aml yasser</h2>
-  //     <Code />
-
-  //     <Code name="aya yasser" age="20" city="cario"/>
-  //     <Code name="nour yasser" age="24" city="cario"/>
-  //   </div>
-  // );
-
-  // ************************ Lec2 *********************************
-  // const[x , setx]= useState(200)
-  // const a1 = function(){
-  //   setx(
-  //     x*2
-  //   )}
-  // return(
-  //   <div className='div1'>
-  //     <button className='btn1' onClick={a1}>dbl</button>
-  //     {x}
-  //   </div>
-  // );
+import { BrowserRouter as Router , Routes , Route } from "react-router-dom";
+import Header from "./components/Header.js"
+import Home from "./components/Home.js"
+import Last from "./components/Last.js"
+import Projects from "./components/Projects.js"
+import Skills from "./components/Skills.js"
+import { Element } from "react-scroll";
+import React from "react" ;
 
 
-  const[cusromers , setcusromers]= useState([
-    {name : "aml" , age: "20" , city: "cairo"},
-    {name : "aya" , age: "17" , city: "cairo"},
-    {name : "nour" , age: "25" , city: "cairo"},
-    {name : "mode" , age: "10" , city: "cairo"},
-  ])
+
+
+function App(){
   return(
-    <div className='div1'>
-      {
-        cusromers.map((cusromer)=>(
-          <Code name={cusromer.name} age={cusromer.age} city={cusromer.city} status="active"/>
-        ))
-      }
+    <>
+    <div className="routers">
+    <Router>
+
+    <Header />
+      <Element name="home" >
+        <Home />
+      </Element>
+      
+      <Element name="skills">
+        <Skills />
+      </Element>
+
+      <Element name="projects">
+        <Projects />
+      </Element>
+
+      <Element name="last">
+        <Last />
+      </Element>
+    </Router>
     </div>
+    </>
   )
 
 }
-
 export default App;
